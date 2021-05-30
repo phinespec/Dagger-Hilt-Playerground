@@ -6,12 +6,16 @@ import androidx.lifecycle.*
 import com.codingwithmitch.daggerhiltplayground.model.Blog
 import com.codingwithmitch.daggerhiltplayground.repository.MainRepository
 import com.codingwithmitch.daggerhiltplayground.util.DataState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel
-@ViewModelInject
+
+@Inject
 constructor(
     private val mainRepository: MainRepository,
     @Assisted private val savedStateHandle: SavedStateHandle
