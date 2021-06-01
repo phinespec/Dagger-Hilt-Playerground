@@ -5,6 +5,10 @@ import com.codingwithmitch.daggerhiltplayground.room.BlogCacheEntity
 import com.codingwithmitch.daggerhiltplayground.util.EntityMapper
 import javax.inject.Inject
 
+/**
+ *      Class responsible for mapping the network objects to the domain objects
+ */
+
 class NetworkMapper
 @Inject
 constructor() : EntityMapper<BlogNetworkEntity, Blog> {
@@ -28,6 +32,7 @@ constructor() : EntityMapper<BlogNetworkEntity, Blog> {
         )
     }
 
+    // Convert list of entity objects to list of blog objects
     fun mapFromEntityList(entities: List<BlogNetworkEntity>): List<Blog> {
         return entities.map { mapFromEntity(it) }
     }
